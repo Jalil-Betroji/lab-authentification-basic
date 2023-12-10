@@ -24,10 +24,10 @@
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-md-9 col-lg-6 col-xl-5">
         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
-          alt="Sample image">
+          alt="Image d'exemple">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-      <form class="container" method='POST'>
+        <form class="container" method='POST'>
 
           @if($errors->any())
           <div class="bg-danger bg-opacity-50 p-3">
@@ -40,24 +40,35 @@
           @endif
           @csrf
 
-          <!-- Email input -->
-          <div class="form-outline mb-4">
-            <input type="email" id="form3Example3" class="form-control form-control-lg"
-              placeholder="Enter a valid email address" name='email' />
-            <label class="form-label" for="form3Example3">Email</label>
+          <p class="h4 mb-4">Connexion</p>
+
+          <!-- E-mail -->
+          <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+          <!-- Mot de passe -->
+          <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Mot de passe">
+
+          <div class="d-flex justify-content-around">
+            <div>
+              <!-- Se souvenir de moi -->
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                <label class="custom-control-label" for="defaultLoginFormRemember">Se souvenir de moi</label>
+              </div>
+            </div>
+            <div>
+              <!-- Mot de passe oublié -->
+              <a href="">Mot de passe oublié ?</a>
+            </div>
           </div>
 
-          <!-- Password input -->
-          <div class="form-outline mb-3">
-            <input type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Enter password"
-              name="password" />
-            <label class="form-label" for="form3Example4">mot de passe</label>
-          </div>
-        
-          <div class="text-center text-lg-start mt-4 pt-2">
-            <button type="submit" class="btn btn-primary btn-lg"
-              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-          </div>
+          <!-- Bouton de connexion -->
+          <button class="btn btn-info btn-block my-4" type="submit">Se connecter</button>
+
+          <!-- S'enregistrer -->
+          <p>Pas encore membre ?
+            <a href="{{route('register')}}">S'enregistrer</a>
+          </p>
 
         </form>
       </div>
@@ -65,13 +76,13 @@
   </div>
   <div
     class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-    <!-- Copyright -->
+    <!-- Droits d'auteur -->
     <div class="text-white mb-3 mb-md-0">
-     Copyright © 2020. Tous droits réservés.
+      Droits d'auteur © 2020. Tous droits réservés.
     </div>
-    <!-- Copyright -->
+    <!-- Droits d'auteur -->
 
-    <!-- Right -->
+    <!-- Droite -->
     <div>
       <a href="#!" class="text-white me-4">
         <i class="fab fa-facebook-f"></i>
@@ -86,6 +97,6 @@
         <i class="fab fa-linkedin-in"></i>
       </a>
     </div>
-    <!-- Right -->
+    <!-- Droite -->
   </div>
 </section>
