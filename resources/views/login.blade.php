@@ -43,10 +43,10 @@
           <p class="h4 mb-4">Connexion</p>
 
           <!-- E-mail -->
-          <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+          <input type="email" name="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
 
           <!-- Mot de passe -->
-          <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Mot de passe">
+          <input type="password" name="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Mot de passe">
 
           <div class="d-flex justify-content-around">
             <div>

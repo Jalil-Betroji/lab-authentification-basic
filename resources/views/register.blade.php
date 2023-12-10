@@ -26,60 +26,54 @@
                     class="img-fluid" alt="Image d'échantillon">
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <form class="container" method='POST'>
+            <form class="container" method='POST' action="{{ route('create.user') }}">
+    @if($errors->any())
+    <div class="bg-danger bg-opacity-50 p-3">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+    @csrf
 
-                    @if($errors->any())
-                    <div class="bg-danger bg-opacity-50 p-3">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                            <li>{{$error}}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                    @endif
-                    @csrf
+    <p class="h4 mb-4">S'inscrire</p>
 
+    <div class="form-row mb-4">
+        <div class="col">
+            <!-- Prénom -->
+            <input type="text" name='name' id="defaultRegisterFormFirstName" class="form-control mb-4"
+                placeholder="Nom complet">
+        </div>
+    </div>
 
-                    <p class="h4 mb-4">S'inscrire</p>
+    <!-- E-mail -->
+    <input type="email" name='email' id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
 
-                    <div class="form-row mb-4">
-                        <div class="col">
-                            <!-- Prénom -->
-                            <input type="text" id="defaultRegisterFormFirstName" class="form-control mb-4"
-                                placeholder="Prénom">
-                        </div>
-                        <div class="col">
-                            <!-- Nom de famille -->
-                            <input type="text" id="defaultRegisterFormLastName" class="form-control"
-                                placeholder="Nom de famille">
-                        </div>
-                    </div>
+    <!-- Mot de passe -->
+    <input type="password" name='password' id="defaultRegisterFormPassword" class="form-control"
+        placeholder="Mot de passe" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+        Au moins 8 caractères et 1 chiffre
+    </small>
 
-                    <!-- E-mail -->
-                    <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+    <!-- Re-Mot de passe -->
+    <input type="password" name='password_confirmation' id="defaultRegisterFormPasswordConfirmation"
+        class="form-control" placeholder="Re-Mot de passe"
+        aria-describedby="defaultRegisterFormPasswordHelpBlockConfirmation">
 
-                    <!-- Mot de passe -->
-                    <input type="password" id="defaultRegisterFormPassword" class="form-control"
-                        placeholder="Mot de passe" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-                    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                        Au moins 8 caractères et 1 chiffre
-                    </small>
+    <!-- Bouton d'inscription -->
+    <button class="btn btn-info my-4 btn-block" type="submit">S'inscrire</button>
 
-                    <input type="password" id="defaultRegisterFormPassword" class="form-control"
-                        placeholder="Re-Mot de passe" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+    <hr>
 
-                    <!-- Bouton d'inscription -->
-                    <button class="btn btn-info my-4 btn-block" type="submit">S'inscrire</button>
+    <!-- Conditions d'utilisation -->
+    <p>En cliquant sur
+        <em>S'inscrire</em>, vous acceptez nos
+        <a href="" target="_blank">conditions d'utilisation</a>
+</form>
 
-                  
-                    <hr>
-
-                    <!-- Conditions d'utilisation -->
-                    <p>En cliquant sur
-                        <em>S'inscrire</em>, vous acceptez nos
-                        <a href="" target="_blank">conditions d'utilisation</a>
-
-                </form>
                 <!-- Formulaire d'inscription par défaut -->
             </div>
         </div>

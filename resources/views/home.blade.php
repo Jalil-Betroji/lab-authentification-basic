@@ -12,7 +12,7 @@
                                 src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
                                 class="rounded-circle img-fluid" style="width: 100px;" />
                         </div>
-                        <h4 class="mb-2">Jalil Betroji</h4>
+                        <h4 class="mb-2">{{Auth()->user()->name}}</h4>
                         <p class="text-muted mb-4">@By Jalil Betroji <span class="mx-2">|</span> <a href="https://github.com/Jalil-Betroji">GitHub|Profile</a></p>
                         <div class="mb-4 pb-2">
                             <button type="button" class="btn btn-outline-primary btn-floating">
@@ -25,9 +25,12 @@
                                 <i class="fab fa-skype fa-lg"></i>
                             </button>
                         </div>
-                        <button type="button" class="btn btn-primary btn-rounded btn-lg">
-                            Message maintenant
-                        </button>
+                        <form action="{{route('logout')}}" method='POST'>
+                            @csrf
+                            @method('delete')
+                            <button class="btn btn-primary btn-rounded btn-lg">Deconnecter</button>
+                        </form>
+                           
                         <div class="d-flex justify-content-between text-center mt-5 mb-2">
                             <div>
                                 <p class="mb-2 h5">8471 $</p>
